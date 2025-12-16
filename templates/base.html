@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Portal</title>
+</head>
+<body>
+
+<nav>
+{% if user.is_authenticated %}
+    ...
+{% else %}
+    <li class="nav-item">
+        <a class="nav-link" href="/login/">Login</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/signup/">Sign Up</a>
+    </li>
+{% endif %}
+</nav>
+
+<hr>
+
+{% block content %}{% endblock %}
+
+</body>
+</html>

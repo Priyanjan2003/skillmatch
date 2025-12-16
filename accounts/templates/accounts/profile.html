@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile | Job Portal</title>
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+</head>
+<body>
+
+<div class="profile-container">
+
+    <!-- Top Header -->
+    <div class="profile-header">
+        <div>
+            <h2>
+                Welcome,
+                <span class="username">{{ request.user.username }}</span>
+            </h2>
+            <p class="subtitle">Manage your skills to get better job matches</p>
+        </div>
+
+        <a href="{% url 'dashboard' %}" class="back-btn">
+            ← Back to Dashboard
+        </a>
+    </div>
+
+    <!-- Skills Card -->
+    <div class="skills-card">
+        <h3>Manage Skills</h3>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="skills-list">
+                {% for skill in skills %}
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="skills"
+                            value="{{ skill.id }}"
+                            {% if skill in user_skills %}checked{% endif %}
+                        >
+                        {{ skill.name }}
+                    </label>
+                {% endfor %}
+            </div>
+
+            <button type="submit" class="save-btn">
+                Save Skills
+            </button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

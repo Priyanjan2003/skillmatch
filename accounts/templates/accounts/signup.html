@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up | Job Portal</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <div class="signup-box">
+        <h2>Create Account</h2>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Enter username" required>
+                <small>Letters, digits and @/./+/-/_ only</small>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" name="password1" placeholder="Enter password" required>
+                <ul class="help-text">
+                    <li>At least 8 characters</li>
+                    <li>Not too similar to personal info</li>
+                    <li>Not commonly used</li>
+                    <li>Not entirely numeric</li>
+                </ul>
+            </div>
+
+            <div class="input-group">
+                <label>Confirm Password</label>
+                <input type="password" name="password2" placeholder="Confirm password" required>
+            </div>
+
+            {% if form.errors %}
+                <p class="error">Please fix the errors above</p>
+            {% endif %}
+
+            <button type="submit" class="btn">Create Account</button>
+        </form>
+
+        <p class="text">
+            Already have an account?
+            <a href="{% url 'login' %}">Login</a>
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
