@@ -121,3 +121,5 @@ LOGIN_URL = '/'
 LOGIN_REDIRECT_URL = '/dashboard/'
 LOGOUT_REDIRECT_URL = '/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
+
+ALLOWED_HOSTS = ['*'] 
