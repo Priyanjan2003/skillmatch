@@ -13,6 +13,7 @@ class Job(models.Model):
     required_skills = models.ManyToManyField(Skill)
     min_experience = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
-
+    apply_link = models.URLField(blank=True)
+    min_experience = models.PositiveIntegerField(default=0)
     def __str__(self):
         return self.title

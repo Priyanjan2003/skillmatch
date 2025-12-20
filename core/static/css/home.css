@@ -1,0 +1,308 @@
+/* ===== HOME PAGE LAYOUT ===== */
+.home-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 10px;
+}
+
+/* Title */
+.home-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+/* Subtitle */
+.home-subtitle {
+    font-size: 15px;
+    color: #64748b;
+    margin-bottom: 35px;
+    max-width: 700px;
+}
+
+/* ===== CARDS GRID ===== */
+.home-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* Individual Card */
+.home-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Card Hover */
+.home-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Card Heading */
+.home-card h3 {
+    font-size: 20px;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+/* Card Text */
+.home-card p {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+/* Button */
+.home-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+/* Button Hover */
+.home-btn:hover {
+    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+    transform: translateY(-1px);
+}
+
+/* Decorative Accent */
+.home-card::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 120px;
+    height: 120px;
+    background: rgba(37, 99, 235, 0.08);
+    border-radius: 50%;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .home-title {
+        font-size: 26px;
+    }
+}
+/* ============================= */
+/* ABOUT SECTION */
+/* ============================= */
+.about-section {
+    margin-top: 60px;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.about-title {
+    font-size: 26px;
+    margin-bottom: 14px;
+    color: #0f172a;
+}
+
+.about-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #475569;
+    max-width: 900px;
+}
+
+
+/* ============================= */
+/* DEVELOPER SECTION */
+/* ============================= */
+.developer-section {
+    margin-top: 50px;
+    padding-bottom: 40px;
+}
+
+.developer-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+.developer-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.developer-card {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: #ffffff;
+    padding: 20px 26px;
+    border-radius: 14px;
+    min-width: 240px;
+    box-shadow: 0 10px 25px rgba(37,99,235,0.35);
+}
+
+.developer-card h4 {
+    margin-bottom: 6px;
+    font-size: 18px;
+}
+
+.developer-card p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* ============================= */
+/* LINKEDIN BUTTON */
+/* ============================= */
+.linkedin-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 16px;
+    background: #0a66c2;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.25s ease;
+}
+
+.linkedin-btn:hover {
+    background: #084d94;
+    transform: translateY(-1px);
+}
+
+/* ABOUT + HOW TO USE */
+.about-text {
+    margin-bottom: 20px;
+    color: #334155;
+    font-size: 15px;
+}
+
+.how-title {
+    margin: 25px 0 12px;
+    color: #0f172a;
+}
+
+.how-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.how-list li {
+    background: #ffffff;
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    font-size: 14px;
+}
+
+.how-list strong {
+    color: #1e40af;
+}
+
+/* ============================= */
+/* WEBSITE BRAND NAME */
+/* ============================= */
+.site-brand {
+    width: 100%;
+    text-align: center;
+    font-size: 42px;
+    font-weight: 600;
+    font-family: 'Pacifico', 'Segoe Script', 'Brush Script MT', cursive;
+    color: #1e40af;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+    user-select: none;
+}
+
+/* subtle underline accent */
+.site-brand::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    margin: 10px auto 0;
+    background: linear-gradient(90deg, #2563eb, #1e40af);
+    border-radius: 10px;
+}
+
+/* ============================= */
+/* MY BRAND ANIMATION */
+/* ============================= */
+/* ============================= */
+/* STRONG MY BRAND ANIMATION */
+/* ============================= */
+/* ============================= */
+/* BALANCED MY BRAND ANIMATION */
+/* ============================= */
+.brand-highlight {
+    color: #facc15;
+    font-weight: 700;
+    display: inline-block;
+
+    /* inherit same font */
+    font-family: inherit;
+
+    opacity: 0;
+    transform: translateY(16px) scale(0.6);
+    animation: myBalancedPop 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation-delay: 0.35s;
+}
+
+@keyframes myBalancedPop {
+    0% {
+        opacity: 0;
+        transform: translateY(16px) scale(0.6);
+    }
+    55% {
+        opacity: 1;
+        transform: translateY(-8px) scale(1.25);
+    }
+    75% {
+        transform: translateY(4px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* .brand-highlight::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.8),
+        transparent 70%
+    );
+    opacity: 0;
+    animation: shine 1.2s ease-out 0.9s forwards;
+}
+
+@keyframes shine {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    40% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+} */

@@ -1,111 +1,123 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+/* =========================
+   STABILITY FIX (NO LAYOUT SHIFT)
+========================= */
+html {
+    overflow-y: scroll;
 }
 
-body {
-    background: #f4f6f9;
-    padding: 30px;
+/* =========================
+   PROFILE PAGE WRAPPER
+========================= */
+.profile-page {
+    width: 100%;
 }
 
+/* Centered profile card */
 .profile-container {
     max-width: 900px;
-    margin: auto;
-}
-
-/* Header */
-.profile-header {
+    margin: 0 auto;
     background: #ffffff;
-    padding: 20px 25px;
+    padding: 30px;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+}
+
+/* =========================
+   TITLES
+========================= */
+.page-title {
+    margin-bottom: 6px;
+    color: #0f172a;
+}
+
+.profile-subtitle {
     margin-bottom: 25px;
-}
-
-.profile-header h2 {
-    color: #1f2937;
-}
-
-.username {
-    color: #4f46e5;
-}
-
-.subtitle {
     font-size: 14px;
-    color: #666;
-    margin-top: 4px;
+    color: #64748b;
 }
 
-.back-btn {
-    text-decoration: none;
-    font-size: 14px;
-    color: #4f46e5;
-    border: 1px solid #4f46e5;
-    padding: 8px 12px;
+/* =========================
+   FORM
+========================= */
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+    color: #1e293b;
+}
+
+/* Inputs */
+.profile-form input[type="number"],
+.profile-form input[type="file"] {
+    width: 220px;
+    padding: 8px 10px;
     border-radius: 6px;
-    transition: 0.3s;
+    border: 1px solid #cbd5e1;
+    font-size: 14px;
 }
 
-.back-btn:hover {
-    background: #4f46e5;
-    color: #fff;
-}
-
-/* Skills Card */
-.skills-card {
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-.skills-card h3 {
-    margin-bottom: 20px;
-    color: #333;
-}
-
-/* Skills List */
+/* =========================
+   SKILLS
+========================= */
 .skills-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .skills-list label {
-    background: #f9fafb;
-    padding: 10px 12px;
-    border-radius: 8px;
-    font-size: 14px;
-    color: #333;
-    display: flex;
-    align-items: center;
-    gap: 10px;
     cursor: pointer;
-    border: 1px solid #e5e7eb;
 }
 
 .skills-list input {
-    accent-color: #4f46e5;
+    display: none;
 }
 
-/* Save Button */
+.skills-list span {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: #e2e8f0;
+    color: #1e293b;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.skills-list input:checked + span {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+/* =========================
+   FILE INFO
+========================= */
+.file-info {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #475569;
+}
+
+/* =========================
+   SAVE BUTTON
+========================= */
 .save-btn {
-    padding: 10px 20px;
-    background: #4f46e5;
+    margin-top: 10px;
+    align-self: flex-start;
+    padding: 10px 22px;
+    background: #2563eb;
+    color: #ffffff;
     border: none;
-    color: #fff;
-    font-size: 15px;
     border-radius: 8px;
+    font-size: 15px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 .save-btn:hover {
-    background: #4338ca;
+    background: #1d4ed8;
 }

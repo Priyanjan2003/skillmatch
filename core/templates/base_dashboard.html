@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Job Portal{% endblock %}</title>
+
+    <!-- Base dashboard layout CSS -->
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+    <!-- Page specific CSS -->
+    {% block extra_css %}{% endblock %}
+    
+</head>
+<body>
+
+<div class="app-container">
+
+    <!-- LEFT SIDEBAR -->
+<aside class="sidebar">
+
+    <!-- TOP PART -->
+    <div class="sidebar-top">
+
+        <h1 class="brand">matchMYskills.com</h1>
+
+        <nav class="nav">
+                <a href="{% url 'home' %}"
+                class="nav-item {% if request.path == '/' %}active{% endif %}">
+                Home
+                </a>
+
+               <!-- <div class="nav-item nav-disabled">Dashboard</div> -->
+
+            <p class="nav-section">Matching Mode</p>
+
+            <a href="{% url 'dashboard' %}?mode=skills"
+               class="nav-item {% if mode == 'skills' %}active{% endif %}">
+                Skill Based
+            </a>
+
+            <a href="{% url 'dashboard' %}?mode=resume"
+               class="nav-item {% if mode == 'resume' %}active{% endif %}">
+                Resume (ATS)
+            </a>
+
+            <a href="{% url 'explore' %}"
+               class="nav-item {% if 'explore' in request.path %}active{% endif %}">
+                Explore
+            </a>
+
+        </nav>
+    </div>
+
+    <!-- BOTTOM PART -->
+    <div class="sidebar-bottom">
+
+        <a href="{% url 'profile' %}"
+           class="nav-item {% if 'profile' in request.path %}active{% endif %}">
+            Profile
+        </a>
+
+        <a href="{% url 'logout' %}" class="nav-item logout">
+            Logout
+        </a>
+
+    </div>
+
+</aside>
+
+    <!-- RIGHT CONTENT -->
+    <main class="content">
+        {% block content %}{% endblock %}
+    </main>
+
+</div>
+
+</body>
+</html>

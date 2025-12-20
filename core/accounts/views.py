@@ -10,12 +10,25 @@ def profile_view(request):
 
     if request.method == 'POST':
         selected_skills = request.POST.getlist('skills')
-        profile.skills.set(selected_skills)
+        experience = request.POST.get('experience')
+        profile.matching_mode = request.POST.get('matching_mode','skills')
+        profile.skills.set(request.POST.getlist('skills'))
+        # profile.skills.set(selected_skills)
+        if 'resume' in request.FILES:
+            profile.resume = request.FILES['resume']
+        profile.save()
+        print("MATCHING MODE:", profile.matching_mode)
+        profile.experience = int(experience)
+        profile.save()
+
         return redirect('dashboard')
 
     return render(request, 'accounts/profile.html', {
         'skills': skills,
-        'user_skills': profile.skills.all()
+        'profile': profile, 
+        'user_skills': profile.skills.all(),
+        'experience': profile.experience
+        
     })
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
@@ -26,7 +39,7 @@ def signup_view(request):
         if form.is_valid():
             user = form.save()
             login(request, user)   # auto login after signup
-            return redirect('dashboard')
+            return redirect('profile')
     else:
         form = UserCreationForm()
 

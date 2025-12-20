@@ -1,0 +1,152 @@
+{% extends "base_dashboard.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="home-container">
+    <div class="site-brand">
+    match <span class="brand-highlight">MY</span>skills
+</div>
+    <h1 class="home-title">
+        Welcome, {{ request.user.username }} 👋
+    </h1>
+
+    <p class="home-subtitle">
+        This is your smart job matching portal.
+        Choose how you want to find jobs and get started.
+    </p>
+
+    <div class="home-cards">
+
+        <div class="home-card">
+            <h3>Skill Based Matching</h3>
+            <p>
+                Get jobs based on the skills you selected in your profile.
+            </p>
+            <a href="{% url 'dashboard' %}?mode=skills" class="home-btn">
+                View Skill Matches
+            </a>
+        </div>
+
+        <div class="home-card">
+            <h3>Resume (ATS) Matching</h3>
+            <p>
+                Upload your resume and get ATS-based job matches.
+            </p>
+            <a href="{% url 'dashboard' %}?mode=resume" class="home-btn">
+                View ATS Matches
+            </a>
+        </div>
+
+    </div>
+    <!-- ABOUT SECTION -->
+<!-- ABOUT -->
+<section class="about-section">
+    <h2>About matchMYskills</h2>
+
+    <p class="about-text">
+        matchMYskills is a smart job matching platform that helps candidates
+        find the right jobs based on their skills or resume.
+        It removes irrelevant job listings and shows only meaningful matches.
+    </p>
+
+    <h3 class="how-title">How to Use matchMYskills</h3>
+
+    <ul class="how-list">
+        <li>
+            <strong>1. Complete Your Profile</strong><br>
+            Add your skills, experience, and upload your resume.
+        </li>
+
+        <li>
+            <strong>2. Choose Matching Mode</strong><br>
+            Select Skill-Based matching or Resume (ATS) matching.
+        </li>
+
+        <li>
+            <strong>3. View Job Matches</strong><br>
+            See jobs with clear skill match counts like <b>2/4 skills matched</b>.
+        </li>
+
+        <li>
+            <strong>4. Apply Confidently</strong><br>
+            Apply only where your profile genuinely fits the job.
+        </li>
+    </ul>
+</section>
+
+
+<!-- DEVELOPER SECTION -->
+<section class="developer-section">
+
+    <h3 class="developer-title">Developed By</h3>
+
+    <div class="developer-cards">
+
+<div class="developer-card">
+    <h4>Priyanjan Raj</h4>
+    <p>Backend & Full Stack Developer</p>
+
+    <a href="https://www.linkedin.com/in/priyanjan-raj-925860280/"
+       target="_blank"
+       class="linkedin-btn">
+        LinkedIn Profile
+    </a>
+</div>
+
+<div class="developer-card">
+    <h4>Aaryan Nandan</h4>
+    <p>Frontend & Gen AI</p>
+
+    <a href="https://www.linkedin.com/in/aaryan-nandan"
+       target="_blank"
+       class="linkedin-btn">
+        LinkedIn Profile
+    </a>
+</div>
+
+<div class="developer-card">
+    <h4>Aparna Sharma</h4>
+    <p>Machine learning & Backend</p>
+
+    <a href="https://in.linkedin.com/in/aparnash11"
+       target="_blank"
+       class="linkedin-btn">
+        LinkedIn Profile
+    </a>
+</div>
+
+<div class="developer-card">
+    <h4>Sidharth Sanatan</h4>
+    <p>Python Dev</p>
+
+    <a href="https://in.linkedin.com/in/Sidharth"
+       target="_blank"
+       class="linkedin-btn">
+        LinkedIn Profile
+    </a>
+</div>
+
+
+        <!-- You can add more developers later -->
+        <!--
+        <div class="developer-card">
+            <h4>Co-Developer Name</h4>
+            <p>Role</p>
+        </div>
+        -->
+
+    </div>
+
+</section>
+
+
+</div>
+
+{% endblock %}
